@@ -1,27 +1,26 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Devis = new Schema({
-    numero :{type:Number},
-    code_client:{type:String},
-    date:{type:String},
-    note:{type:String},
+  codedevi :String,
+    code_client:String,
+    date:String,
+    note:String,
     produits:[{
-        produit :{type:String},
-        tva:{type:String},
-        pu:{type:Number},
-        qte:{type:String},
-        totht:{type:Number}
+        codeproduit :String,
+        tva:String,
+        pu:Number,
+        qte:String,
+        totht:Number
 
     }],
-    tottva:{type:Number},
-      totttc: {type:Number},
-      wtotht: {type:Number},
-
+    tottva:Number,
+      totttc:Number,
+      wtotht:Number,
+statut:String
 
     
 
   
-    },{
-    collection: 'Devis'})
+    })
 
 module.exports = mongoose.model('Devis', Devis)

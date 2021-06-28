@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Fournisseur = new Schema({
+    code:{type:Number},
     sociale:{type:String},
     siteweb:{type:String},
     matricule:{type:String},

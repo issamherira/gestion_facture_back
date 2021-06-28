@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Commande = new Schema({
+  codecommande :{type:String},
     code_client:{type:String},
-    date:{type:Date},
-    dateexpe:{type:Date},
-    dateliv: {type:Date},
+    date:{type:String},
+    dateexpe:{type:String},
+    dateliv: {type:String},
     note:{type:String},
     produits:[{
-        produit :{type:String},
+        codeproduit :{type:String},
         tva:{type:String},
         pu:{type:Number},
         qte:{type:String},

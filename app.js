@@ -6,6 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
+const nodemailer = require("nodemailer");
 
 
 const rtsIndex = require('./routes/index.router');
@@ -17,6 +18,14 @@ const categorieRoute = require('./controllers/categorie');
 const stockRoute = require('./controllers/stock');
 const devisRoute = require('./controllers/devis');
 const commandeRoute = require('./controllers/commande');
+const BcommandeRoute = require('./controllers/Bcommande');
+
+const projetRoute = require('./controllers/projet');
+const factureRoute = require('./controllers/facture');
+var mailController = require('./controllers/mailer');
+
+
+
 
 
 
@@ -24,6 +33,7 @@ const commandeRoute = require('./controllers/commande');
 var app = express();
 
 // middleware
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
@@ -35,6 +45,12 @@ app.use('/categorie',categorieRoute);
 app.use('/stock',stockRoute);
 app.use('/devis',devisRoute);
 app.use('/commande',commandeRoute);
+app.use('/Bcommande',BcommandeRoute);
+app.use('/projet',projetRoute);
+app.use('/facture',factureRoute);
+app.use('/mail', mailController);
+
+
 
 
 

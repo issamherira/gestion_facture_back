@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Client = new Schema({
+    codeclient:{type:Number},
     type:{type:String},
     siteweb:{type:String},
     sociale:{type:String},
